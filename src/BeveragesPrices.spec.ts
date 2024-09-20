@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest"
-import { HotChocolate } from "./beverages/HotChocolate.js"
 import { Tea } from "./beverages/Tea.js"
 import { CoffeeOrder } from "./CoffeeOrder.js"
-import { HotChocolateWithCream } from "./HotChocolateWithCream.js"
+import { HotChocolateOrder } from "./HotChocolateOrder.js"
 import { TeaWithMilk } from "./TeaWithMilk.js"
 
 describe("Beverages Prices", () => {
@@ -18,8 +17,8 @@ describe("Beverages Prices", () => {
     })
 
     it("computes hot chocolate price", () => {
-      const hotChocolate = new HotChocolate()
-      expect(hotChocolate.price()).toBeCloseTo(1.45)
+      const hotChocolateOrder = new HotChocolateOrder()
+      expect(hotChocolateOrder.price()).toBeCloseTo(1.45)
     })
   })
 
@@ -46,8 +45,9 @@ describe("Beverages Prices", () => {
     })
 
     it("computes hot chocolate with cream price", () => {
-      const hotChocolateWithCream = new HotChocolateWithCream()
-      expect(hotChocolateWithCream.price()).toBeCloseTo(1.6)
+      const hotChocolateOrder = new HotChocolateOrder()
+      hotChocolateOrder.withCream()
+      expect(hotChocolateOrder.price()).toBeCloseTo(1.6)
     })
   })
 })
