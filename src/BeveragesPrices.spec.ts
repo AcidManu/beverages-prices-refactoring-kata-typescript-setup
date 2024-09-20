@@ -52,4 +52,13 @@ describe("Beverages Prices", () => {
       expect(hotChocolateOrder.price()).toBeCloseTo(1.6)
     })
   })
+
+  describe("Cinnamon cases", () => {
+    it("computes coffee with cinnamon", () => {
+      const coffeeOrder = new CoffeeOrder()
+      coffeeOrder.withCinnamon()
+
+      expect(coffeeOrder.price()).toBeCloseTo(1.25)
+    })
+  })
 })
