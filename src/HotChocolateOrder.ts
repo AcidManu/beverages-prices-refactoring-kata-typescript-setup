@@ -1,4 +1,5 @@
 import { HotChocolate } from "./beverages/HotChocolate.js"
+import { Cinnamon } from "./complements/Cinnamon.js"
 import { Complement } from "./complements/Complement.js"
 import { Cream } from "./complements/Cream.js"
 
@@ -18,5 +19,9 @@ export class HotChocolateOrder {
 
   withCream() {
     this.complements.push(new Cream())
+  }
+
+  withCinnamon() {
+    this.complements.push(new Cinnamon())
   }
 }

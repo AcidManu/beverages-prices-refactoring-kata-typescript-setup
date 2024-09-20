@@ -60,5 +60,19 @@ describe("Beverages Prices", () => {
 
       expect(coffeeOrder.price()).toBeCloseTo(1.25)
     })
+
+    it("computes hot chocolate with cinnamon", () => {
+      const hotChocolateORder = new HotChocolateOrder()
+      hotChocolateORder.withCinnamon()
+
+      expect(hotChocolateORder.price()).toBeCloseTo(1.5)
+    })
+
+    it("computes tea with cinnamon", () => {
+      const teaOrder = new TeaOrder()
+      teaOrder.withCinnamon()
+
+      expect(teaOrder.price()).toBeCloseTo(1.55)
+    })
   })
 })
