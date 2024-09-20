@@ -1,4 +1,4 @@
-import { Coffee } from "./Coffee.js"
+import { Coffee } from "./beverages/Coffee.js"
 import { Cream } from "./complements/Cream.js"
 import { Milk } from "./complements/Milk.js"
 

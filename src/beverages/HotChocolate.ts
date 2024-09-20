@@ -1,4 +1,4 @@
-import { Beverage } from "./Beverage.js"
+import { Beverage } from "../Beverage.js"
 
 export class HotChocolate implements Beverage {
   price(): number {

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest"
+import { HotChocolate } from "./beverages/HotChocolate.js"
+import { Tea } from "./beverages/Tea.js"
 import { CoffeeOrder } from "./CoffeeOrder.js"
-import { HotChocolate } from "./HotChocolate.js"
 import { HotChocolateWithCream } from "./HotChocolateWithCream.js"
-import { Tea } from "./Tea.js"
 import { TeaWithMilk } from "./TeaWithMilk.js"
 
 describe("Beverages Prices", () => {

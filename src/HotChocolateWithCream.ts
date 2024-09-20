@@ -1,4 +1,4 @@
-import { HotChocolate } from "./HotChocolate.js"
+import { HotChocolate } from "./beverages/HotChocolate.js"
 
 export class HotChocolateWithCream extends HotChocolate {
   price(): number {
