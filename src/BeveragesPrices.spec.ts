@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest"
 import { CoffeeOrder } from "./CoffeeOrder.js"
-import { CoffeeWithMilk } from "./CoffeeWithMilk.js"
 import { CoffeeWithMilkAndCream } from "./CoffeeWithMilkAndCream.js"
 import { HotChocolate } from "./HotChocolate.js"
 import { HotChocolateWithCream } from "./HotChocolateWithCream.js"
@@ -32,8 +31,10 @@ describe("Beverages Prices", () => {
     })
 
     it("computes coffee with milk price", () => {
-      const coffeeWithMilk = new CoffeeWithMilk()
-      expect(coffeeWithMilk.price()).toBeCloseTo(1.3)
+      const coffeeOrder = new CoffeeOrder()
+      coffeeOrder.withMilk()
+
+      expect(coffeeOrder.price()).toBeCloseTo(1.3)
     })
   })
 
