@@ -1,18 +1,22 @@
 import { HotChocolate } from "./beverages/HotChocolate.js"
+import { Complement } from "./complements/Complement.js"
 import { Cream } from "./complements/Cream.js"
 
 export class HotChocolateOrder {
-  private hasCream: boolean = false
+  private complements: Complement[] = []
 
   price() {
     const hotChocolate = new HotChocolate()
 
-    const cream = this.hasCream ? new Cream() : undefined
+    const complementsPrices = this.complements.reduce(
+      (complementsSum, nextComplement) => complementsSum + nextComplement.price(),
+      0,
+    )
 
-    return hotChocolate.price() + (cream ? cream.price() : 0)
+    return hotChocolate.price() + complementsPrices
   }
 
   withCream() {
-    this.hasCream = true
+    this.complements.push(new Cream())
   }
 }
