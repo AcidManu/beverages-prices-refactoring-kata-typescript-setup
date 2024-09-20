@@ -1,11 +1,15 @@
 import { Coffee } from "./Coffee.js"
+import { Milk } from "./complements/Milk.js"
 
 export class CoffeeOrder {
   private hasMilk: boolean = false
 
   price() {
     const coffee = new Coffee()
-    return coffee.price() + (this.hasMilk ? 0.1 : 0)
+
+    const milk = this.hasMilk ? new Milk() : undefined
+
+    return coffee.price() + (milk ? milk.price() : 0)
   }
 
   withMilk() {
